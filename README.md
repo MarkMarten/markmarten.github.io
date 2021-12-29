@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
  <body>
-   <button>Continue</button>
+   <button onclick="window.location.href='page.html">Continue</button>
  </body>
 </html>
