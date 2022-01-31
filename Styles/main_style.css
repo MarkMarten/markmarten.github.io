@@ -50,12 +50,12 @@ body {
 
 #mainPageTextL {
     text-align: left;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 #mainPageTextR {
     text-align: right;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 #mainPageTextTitle {
@@ -112,3 +112,28 @@ body {
 
 
     
+
+
+@font-face {
+    font-family: 'gidoleregular';
+    src: url('/gidole/GidoleWebFontKit/Gidole-Regular.woff2') format('woff2'),
+         url('/gidole/GidoleWebFontKit/Gidole-Regular.woff') format('woff'),
+         url('/gidole/GidoleWebFontKit/Gidole-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.bounded {
+    margin-left: max(50px, min(500px, 500px)); 
+    margin-right: max(50px, min(500px, 500px));
+}
+.boundedSmall {
+    margin-left: max(50px, min(300px, 500px)); 
+    margin-right: max(50px, min(300px, 500px));
+}
+.boundedExtraSmall {
+    margin-left: max(50px, min(50px, 500px)); 
+    margin-right: max(50px, min(50px, 500px));
+}
+
