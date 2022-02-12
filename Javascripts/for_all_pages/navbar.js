@@ -1,11 +1,5 @@
 
 
-// Checking size to change header into mobile sized
-function checkSize() {
-    if (window.innerWidth < 480) {
-        changeNavbarBasedOnWidth()
-    }
-}
 
 // Returns page title based on which page it is
 function getPageTitle() {
@@ -38,14 +32,12 @@ function getPageTitle() {
 }
 
 function changeNavbarBasedOnWidth() {
-    
-    // Handle which page it is
-    let currentPageTitle = getPageTitle()
-
+    getPageTitle()
+    console.log(window.innerWidth)
     navigationBar = document.getElementById("navigationBar"); //gets navbar element to change innerHTML
     //If small
     if (window.innerWidth < 760) {
-        console.log("here")
+        console.log("screen size scripts")
         navigationBar.innerHTML = 
         '<div class="container-fluid">'+
         '    <button class="navbar-toggler" style="background-color: DarkSlateGrey"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">'+
@@ -72,6 +64,7 @@ function changeNavbarBasedOnWidth() {
         '    </div>'+
         '</div>'
     } else {
+
         navigationBar.innerHTML = 
         '<div class="container-fluid" style="min-width: 500px;">' +
         '    <a class="navbar-brand text-dark" href="/Pages/home/index.html">LOGO</a>' +
@@ -85,10 +78,9 @@ function changeNavbarBasedOnWidth() {
         '    </ul>' +
         '</div>'
     }
-
 }
 
 //Resize listener -> change navbar
 window.addEventListener('resize', changeNavbarBasedOnWidth);
-
-changeNavbarBasedOnWidth() // Renders the navbar
+window.addEventListener('load', changeNavbarBasedOnWidth);
+changeNavbarBasedOnWidth() 
