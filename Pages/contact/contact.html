@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <!--Personal CSS-->
         <link rel="stylesheet" href="/Styles/main_style.css">
+        <link rel="stylesheet" href="/Styles/datepicker.css">
         <!--Font Special Elite-->
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Special+Elite" />
 
@@ -61,26 +62,26 @@
                 <h3 style="margin-top: 50px; font-family: 'Special Elite'; color: #F2B705">WOULD YOU LIKE TO HAVE A PERSONALIZED GAME?</h3>
                 <h4 style="font-family: 'Special Elite'; color: #F2B705">Leave me a message!</h4>
 
-                <div class="centered" style="margin:40px">
+                <div class="centered" style="margin-top:40px">
                     <div class=" rounded" style="background-color:#027373; width:50%; min-width:300px">
 
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr;"> 
                         <div style="margin:10px">
                             <label for="exampleFormControlInput1" class="form-label">Name</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your Name">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your Name">
                         </div>
                         <div style="margin:10px">
                             <label for="exampleFormControlInput1" class="form-label">Location</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Tallinn, Estonia">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tallinn, Estonia">
                         </div>
                         <div style="margin:10px">
                             <label for="exampleFormControlInput1" class="form-label">Number of participants</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="1-..">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="1-..">
                         </div>
                         <div style="margin:10px">
                             <label for="exampleFormControlInput1" class="form-label">Date</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="2022/01/25">
+                            <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="2022/01/25">
                         </div>
                         
                     </div>
@@ -96,8 +97,11 @@
                 </div>
 
             </div>
-            
+            <div class="centered">
+                <button type="button" class="btn" style="font-size:20px; margin:20px; background-color: #027373; font-family: 'Special Elite'; color: #FFFFFF">Send</button>
+            </div>
         </div>
+
         
         <footer id="sticky-footer" style="background-color: rgb(2, 115, 115,0.6); ">
             <div class="centered text-dark" > 
