@@ -362,13 +362,21 @@ function stackEl() {
     let width = window.innerWidth
     
     if (width < 1330) {
-        resizeGame()
-        resizeGameBottom()
-        resizeCarousel()
+        if (!resized){
+            resizeGame()
+            resizeGameBottom()
+            resizeCarousel()
+            resized = true
+            restored = false
+        }
     } else {
-        restore()
-        restoreGameBottom()
-        restoreCarousel()
+        if (!restored) {
+            restore()
+            restoreGameBottom()
+            restoreCarousel()
+            resized = false
+            restored=true
+        }
     }
     
 }
