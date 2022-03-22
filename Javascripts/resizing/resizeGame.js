@@ -362,7 +362,7 @@ function stackEl() {
     let width = window.innerWidth
     
     if (width < 1330) {
-        if (!resized){
+        if (resized == false){
             resizeGame()
             resizeGameBottom()
             resizeCarousel()
@@ -370,7 +370,7 @@ function stackEl() {
             restored = false
         }
     } else {
-        if (!restored) {
+        if (restored == false) {
             restore()
             restoreGameBottom()
             restoreCarousel()
