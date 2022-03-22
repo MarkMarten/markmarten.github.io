@@ -1,0 +1,139 @@
+body {
+    overflow-x: hidden; 
+    font-family: 'Gidole', sans-serif;
+    min-width:315px;
+}
+
+
+#titleId {
+    text-align: center;
+    margin: 0 auto;
+    top: 100px;
+    position: relative;
+    font-size: 100px;
+}
+
+#titleIdMobile {
+    text-align: center;
+    margin: 0 auto;
+    top: 100px;
+    position: relative;
+    font-size: 75px;
+}
+
+#titlePage {
+    height: 470px;
+}
+
+
+#mainPageTitleBackground {
+    background-color: lightslategray;
+}
+
+#mainPageTitleL {
+    font-size: 35px;
+    text-align: left;
+    margin-top: 15px;
+}
+
+#mainPageTitleR {
+    font-size: 35px;
+    text-align: right;
+    margin-top: 15px;
+}
+
+#mainPageTitleC {
+    font-size: 35px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#mainPageTextL {
+    text-align: left;
+    font-size: 20px;
+}
+
+#mainPageTextR {
+    text-align: right;
+    font-size: 20px;
+}
+
+#mainPageTextTitle {
+    text-align: left;
+    font-size: 25px;
+}
+
+.mainPageLayer {
+    width: 75vh;
+}
+
+
+#profilepic {
+    width: 50vh;
+
+    object-fit: cover;
+}
+
+.centered {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#gameCard {
+    width: 150px;
+    margin: 10px
+}
+
+.explanationCardImage {
+    width: 250px; 
+    height: 250px; 
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+#authorTitle {
+    color: black;
+}
+#authorTitle:hover {
+    color: #373737;
+}
+.cardStyle {
+    width: 277px; 
+    margin-right:20px;
+    margin-top: 10px;
+    min-width: 17rem;
+}
+
+#map {
+    height: 220px;
+    width: 250px;
+  }
+
+
+    
+
+
+@font-face {
+    font-family: 'gidoleregular';
+    src: url('/gidole/GidoleWebFontKit/Gidole-Regular.woff2') format('woff2'),
+         url('/gidole/GidoleWebFontKit/Gidole-Regular.woff') format('woff'),
+         url('/gidole/GidoleWebFontKit/Gidole-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.bounded {
+    margin-left: max(50px, min(500px, 500px)); 
+    margin-right: max(50px, min(500px, 500px));
+}
+.boundedSmall {
+    margin-left: max(50px, min(300px, 500px)); 
+    margin-right: max(50px, min(300px, 500px));
+}
+.boundedExtraSmall {
+    margin-left: max(50px, min(50px, 500px)); 
+    margin-right: max(50px, min(50px, 500px));
+}
+

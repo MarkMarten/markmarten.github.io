@@ -28,6 +28,12 @@ function getPageTitle() {
         authorActive = ""
         contactActive = "active"
         return "Contact"
+    }  else {
+        homeActive = ""
+        gamesActive = ""
+        authorActive = ""
+        contactActive = ""
+        return ""
     }
 }
 
@@ -44,12 +50,12 @@ function changeNavbarBasedOnWidth() {
         '        <span class = "navbar-toggler-icon navbar-dark" > </span>'+
         '    </button>'+
         '    <a class="navbar-brand text-dark" href="/Pages/home/index.html">LOGO</a>'+
-        '    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">'+
+        '    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width:75%">'+
         '    <div class="offcanvas-header bg-dark"> <h5 class = "offcanvas-title text-light" id = "offcanvasNavbarLabel" > LOGO </h5> <button type = "button" class = "btn-close text-reset"data-bs-dismiss = "offcanvas" aria-label = "Close" > </button> </div > '+
-        '    <div class="offcanvas-body bg-dark">'+
+        '    <div class="offcanvas-body bg-dark" >'+
         '        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="font-size: 20px;">'+
         '            <li class="nav-item">'+
-        '                <a class="nav-link '+homeActive+'" aria-current="page" href="/Pages/home/index.html">Home page</a>'+
+        '                <a class="nav-link '+homeActive+'" aria-current="page" href="/Pages/home/index.html">Homepage</a>'+
         '            </li>'+
         '            <li class="nav-item">'+
         '                <a class="nav-link '+gamesActive+'" aria-current="page" href="/Pages/games/games.html">Games</a>'+
@@ -70,7 +76,7 @@ function changeNavbarBasedOnWidth() {
         '    <a class="navbar-brand text-dark" href="/Pages/home/index.html">LOGO</a>' +
         '    <ul class="navbar-nav">' +
         '        <li class="nav-item">' +
-        '            <a class="nav-link '+homeActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/home/index.html">Home page</a>' +
+        '            <a class="nav-link '+homeActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/home/index.html">Homepage</a>' +
         '            <a class="nav-link '+gamesActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/games/games.html">Games</a>' +
         '            <a class="nav-link '+authorActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/author/author.html">About the author</a>' +
         '            <a class="nav-link '+contactActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/contact/contact.html">Contact</a>' +

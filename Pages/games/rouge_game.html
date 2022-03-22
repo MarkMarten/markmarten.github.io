@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <meta http-equiv="Content-Security-Policy">
+      <title>Rõuge</title>
+      <link rel="icon" href="/assets/colored-compass.png">
+        <!--Mobile view size-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <!--Fonts-->
+        <link href="http://fonts.cdnfonts.com/css/gidole" rel="stylesheet">
+        <!--Icons-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <!--Personal CSS-->
+        <link rel="stylesheet" href="/Styles/main_style.css">
+        <link rel="stylesheet" href="/Styles/map_style.css">
+        <!--Font Special Elite-->
+       <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Special+Elite" />
+
+       <!--Leaflet-->
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+       crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+        <!--Jquery-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!--Easybutton-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+
+    <body class="bg-light">
+        <!--Navbar-->
+        <div class="sticky-top" >
+            <div style="position: absolute; width:100%; background-color: rgb(2, 115, 115,0.6); height:60px;">
+                <nav class="navbar sticky-top navbar-dark" id="navigationBar">
+                    <div class="container-fluid" style="min-width: 500px;">
+                        <a class="navbar-brand text-dark" href="/Pages/home/index.html">LOGO</a>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link '+homeActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/home/index.html">Homepage</a>
+                                <a class="nav-link '+gamesActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/games/games.html">Games</a>
+                                <a class="nav-link '+authorActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/author/author.html">About the author</a>
+                                <a class="nav-link '+contactActive+' m-3 d-inline text-dark" aria-current="page" href="/Pages/contact/contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+
+
+        <!--Img + title-->
+        <div style="height: 40vh; position: relative; border-bottom:1px solid black;" >
+            <div style="height: 40vh; position: relative; border-bottom:1px solid black;" >  
+                <div style="height: 100%" class="centered ">
+                    <div style="width: 600px; max-width: 100%">
+                        <div style="text-align: center; padding-top:10px; padding-left: 3px; padding-right: 3px; border-radius: 3px; background-color:rgba(255, 255, 255, 0.87); " >
+                            <span style=' font-size: 50px; font-family:"Special Elite"; color: #F2B705'>DISCOVER MYSTERIOUS TREASURE IN RÕUGE...</span>   
+                        </div>
+                    </div>
+                </div>
+                <div class="centered" >
+                    <img style="z-index: -1; position: absolute; top:0; height: 100%; width:100%; object-fit: cover;" src="/assets/rouge_pic.jpg">
+                </div> 
+            </div>
+        </div>
+
+        
+        <div id="gameField" >
+            <div class="centered " style="background-color: #258286;" >
+            
+                <!--Text-->
+                <div style="width:40%; margin:20px"  class="centered ">
+                    <div style="padding:5%">
+                        <div>
+                            <div style="text-align: left; padding-top:6px;">
+                                <h3 style='font-family:"Special Elite"; color: #100F0D'>THE STORY</h3>
+                            </div>
+                            <div >
+                                <p style='font-family:"gidoleregular"; color: #FFFFFF' >A local journalist, inspired by many stories about the picturesque town of Rõuge, decided to explore its history. 
+                                    He wanted to write an article about people associated with Rõuge, so he started to look for materials. One day, he found one page from a very old issue of the local newspaper,
+                                    where was information about a mysterious treasure of Rõuge. But there was neither the date nor the author. The rest of this edition of this newspaper was nowhere to be found. 
+                                    This information, however, was accompanied by a map, statements of various people about "their" places in Rõuge, and hints about a mysterious treasure of this place.<br><br>
+                                    "Rõuge has been hiding a very valuable treasure for many years, the value of which continues to grow. The stories of several inhabitants of this town can help you find it. 
+                                    Through their stories and places connected with them, you will reach clues that will lead you to find the treasure." The journalist, of course, decided to solve the mystery and discovered the secret!
+                                    He also found that its value is so precious and important that others must also find it!<br>
+                                    Therefore, instead of an article, he prepared stories of people and a map for you.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div id = "howToPlay">
+                                <div  style="text-align: right; padding-top:6px">
+                                    <h3 style='font-family:"Special Elite"; color: #100F0D'>HOW TO PLAY?</h3>
+                                </div>
+                                <div >
+                                    <p style='font-family:"gidoleregular"; color: #FFFFFF'>
+                                        Here is the card game with the map and stories of people connected with Rõuge.<br>
+                                        Your goal is to discover the treasure!<br>
+                                        To do it:<br>
+                                        1. Start in the place with the star. Then go to the places marked on the map (you can choose the order) and match a story connected to this place.<br>
+                                        2. Put the number of the story next to the symbol of the place, in the frame under the map.<br>
+                                        3. In the place where you'll be, solve the task, that's contained in the person's story. IMPORTANT! To do it, you'll need to look around and read info, that you'll find in the places.<br>
+                                        4. Write the solutions of the tasks in the frame under the map, under the symbol and number. You can discover the treasure by arranging the solutions of the tasks in the order of numbers.<br><br>
+                                    </p>
+                                    <p style='font-family:"gidoleregular"; color: #F2B705'>
+                                        READ EVERYTHING CAREFULLY!
+                                    </p>
+                                    <p style='font-family:"gidoleregular"; color: #FFFFFF'>
+                                        Estimated time for a game is 75 minutes, but adjust it to your possibilities. Blue symbols on the map show where you can stop for a coffee or to take a look on the view.
+                                        After the game, I encourage you to look for more information about places and people from Rõuge, cause this place has a lot of interesting stories. What is mentioned in a game, is just the beginning!
+                                    </p>
+                                    <p style='font-family:"gidoleregular"; color: #F2B705'>
+                                        Good luck and enjoy your game!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <!--Map + iconfields -->
+                <div  style="width:50%;" >
+                    <div class="centered" style="padding: 25px ">
+                        <div id="map"></div>
+                    </div>
+                    <div class="centered">
+                        <div > 
+                            <div class="centered" style="padding:1px">
+                                <img src="../../assets/icons/landmark-solid.svg" width="20" height="20">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="border-radius: 20px; border-color: black; text-align: center; font-weight: bold;">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="text-align: center; font-weight: bold;">
+                            </div>
+                        </div>
+                        <div > 
+                            <div class="centered" style="padding:1px">
+                                <img src="../../assets/icons/compass-solid.svg" width="20" height="20">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="border-radius: 20px; border-color: black; text-align: center; font-weight: bold; ">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="text-align: center; font-weight: bold;">
+                            </div>
+                        </div>
+                        <div > 
+                            <div class="centered" style="padding:1px">
+                                <img src="../../assets/icons/tower-observation-solid.svg" width="20" height="20">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="border-radius: 20px; border-color: black; text-align: center; font-weight: bold;">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="text-align: center; font-weight: bold;">
+                            </div>
+                        </div>
+                        <div > 
+                            <div class="centered" style="padding:1px">
+                                <img src="../../assets/icons/sourcetree-brands.svg" width="20" height="20">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="border-radius: 20px; border-color: black; text-align: center; font-weight: bold;">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="text-align: center; font-weight: bold;">
+                            </div>
+                        </div>
+                        <div > 
+                            <div class="centered" style="padding:1px">
+                                <img src="../../assets/icons/fish-solid.svg" width="20" height="20">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="border-radius: 20px; border-color: black; text-align: center; font-weight: bold;">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="text-align: center; font-weight: bold;">
+                            </div>
+                        </div>
+                        <div > 
+                            <div class="centered" style="padding:1px">
+                                <img src="../../assets/icons/music-solid.svg" width="20" height="20">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="border-radius: 20px; border-color: black; text-align: center; font-weight: bold;">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="text-align: center; font-weight: bold;">
+                            </div>
+                        </div>
+                        <div > 
+                            <div class="centered" style="padding:1px">
+                                <img src="../../assets/icons/monument-solid.svg" width="20" height="20">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="border-radius: 20px; border-color: black; text-align: center; font-weight: bold;">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="text-align: center; font-weight: bold;">
+                            </div>
+                        </div>
+                        <div > 
+                            <div class="centered" style="padding:1px">
+                                <img src="../../assets/icons/masks-theater-solid.svg" width="20" height="20">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="border-radius: 20px; border-color: black; text-align: center; font-weight: bold;">
+                            </div>
+                            <div>
+                                <input maxlength="1" size="1" style="text-align: center; font-weight: bold;">
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
+       
+        
+
+        <!--Carousel-->
+        <div class="centered" style="margin:25px">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel" style="width:50%">
+                <div class="carousel-indicators ">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="../../assets/t1.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/t2.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/t3.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/t4.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/t5.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/t6.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/t7.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/t8.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+        
+        
+        
+        <div class="centered " id="gameBottom">
+            
+            <div  style="display:flex;justify-content:flex-end;align-items:center;">
+                
+                <div >
+                    <div class="centered">
+                        <div style="text-align: right;" >
+                            <div style="padding-top: 25px;">
+                                <p style='font-family: "Special Elite"; color: #100F0D; font-size: 25px;'>ANSWER:</p>
+                            </div>
+                            <div style="padding-top: 23px">
+                                <p style='font-family: "Special Elite"; color: #100F0D; font-size: 25px;'>NAME OF THE TEAM:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="padding: 5px" >
+                    <div class="centered">
+                        <div  style="text-align: right;" >
+                            <div style="padding-left: 30px; padding-top:2px">
+                                <input type="text" id="gameAnswer" style="padding:7px; border-width: 5px; border-color: black; font-size:20px;" size="40">
+                            </div>
+                            <div style="padding-top: 25px;">
+                                <input type="text" id="gameTeam" style="padding:7px; border-width: 5px; border-color: black; font-size:20px;" size="40">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+    
+        </div>
+        
+        <!--Modals-->
+        <div class="centered">
+            <button onclick="setModalAnswer()" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn" style="font-size:20px; margin:20px; background-color: #027373; font-family: 'Special Elite'; color: #FFFFFF">Send</button>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Is this your answer?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalAnswer">
+                  Your answer is: 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  
+                  <button type="button" class="btn btn-primary" onclick="sendAnswer()" data-bs-dismiss="modal">Confirm</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="endModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="endModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="endModalLabel">End?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Your answer is: ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  
+                  <button type="button" class="btn btn-primary" >Confirm</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+        <!--Thanks-->
+        <div style='background-color: #F2B705; text-align: center; font-family: "Special Elite"; color:#100F0D; padding:30px; font-size: 25px;' >
+            THANK YOU FOR PARTICIPATION!
+        </div>
+                
+
+        <footer id="sticky-footer" style="background-color: rgb(2, 115, 115,0.6); ">
+            <div class="centered text-dark" > 
+                <div style="padding: 5px" >
+                    <div style="display:flex">
+                        <i style="font-size: 30px;" class=" bi bi-envelope-fill"></i>
+                        <div class="centered" style="padding-top:10px;  margin-left:10px">
+                            <p style="font-family: gidoleregular;">eventy.urszula@gmail.com</p>
+                        </div>
+                    </div>
+                    <div style="display:flex">
+                        <i style="font-size: 25px;" class="bi bi-telephone-fill"></i>
+                        <div class="centered" style="padding-top:10px; margin-left:10px">
+                            <p style="font-family: gidoleregular;">+37266908730</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div style="padding: 5px">
+                    <div style="display:flex" >
+                        <div class="centered" style="padding-top:10px;  margin-left:10px">
+                            <p style="font-family: gidoleregular;">Copyright by touristicgames.com</p>
+                        </div>
+                    </div>
+                    <div style="display:flex">
+                        <div class="centered" style="padding-top:10px;  margin-left:10px">
+                            <p style="font-family: gidoleregular;">Privacy Policy</p>
+                            <p style="font-family: gidoleregular;">&nbsp;|&nbsp;</p>
+                            <p style="font-family: gidoleregular;">Terms and Conditions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/Javascripts/API/functions.js"></script>
+        <script src="/Javascripts/leaflet/map_data.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="/Javascripts/for_all_pages/navbar.js"></script>
+        <script src="/Javascripts/resizing/resizeGame.js"></script>
+    </body> 
+
+
+</html>
