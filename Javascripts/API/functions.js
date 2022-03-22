@@ -8,7 +8,7 @@ function sendAnswer() {
 
 
     //create global var
-    axios.post('http://18.198.133.166:3000/answer', {
+    axios.post('https://d3n1vu5aqz455s.cloudfront.net/answer', {
       game: "rouge",
       answer: answer,
       team_name: team_name
