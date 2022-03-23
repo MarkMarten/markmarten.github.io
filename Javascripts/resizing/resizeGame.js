@@ -3,7 +3,6 @@ let restored = false;
 
 
 function restore() {
-    console.log("restore")
     gameField = document.getElementById("gameField")
     gameField.innerHTML = '<div class="centered" style="background-color: #258286;" >' +
             '<!--Text-->' +
@@ -366,7 +365,8 @@ function stackEl() {
     let width = window.innerWidth
     
     if (width < 1330) {
-        if (resized = false) {
+
+        if (resized == false) {
             resizeGame()
             resizeGameBottom()
             resizeCarousel()
@@ -375,7 +375,7 @@ function stackEl() {
         }
         
     } else {
-        if (restored = false) {
+        if (restored == false) {
 
             restore()
             restoreGameBottom()

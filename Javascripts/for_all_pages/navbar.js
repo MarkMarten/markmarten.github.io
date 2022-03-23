@@ -39,11 +39,11 @@ function getPageTitle() {
 
 function changeNavbarBasedOnWidth() {
     getPageTitle()
-    console.log(window.innerWidth)
+
     navigationBar = document.getElementById("navigationBar"); //gets navbar element to change innerHTML
     //If small
     if (window.innerWidth < 760) {
-        console.log("screen size scripts")
+
         navigationBar.innerHTML = 
         '<div class="container-fluid">'+
         '    <button class="navbar-toggler" style="background-color: DarkSlateGrey"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">'+

@@ -5,7 +5,6 @@ function setModalAnswer() {
     if (answer.length == 0 || team_name.length == 0) {
         $('#errModal').modal('show');
     } else if (answer.length != config_answer1.length) {
-        console.log("here")
         document.getElementById("badAnswerModalText").innerHTML="There are <b>"+config_answer1.length+"</b> letters in this answer but your answer had <b>"+ answer.length+"</b>. Please change your answer to the correct size."
         $('#badAnswerModal').modal('show');
     } else {
