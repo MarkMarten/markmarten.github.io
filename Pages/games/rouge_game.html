@@ -34,7 +34,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
         <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!--Axios-->
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        
     </head>
 
     <body class="bg-light">
@@ -307,7 +310,7 @@
                                 <input type="text" id="gameAnswer" style="padding:7px; border-width: 5px; border-color: black; font-size:20px;" size="40">
                             </div>
                             <div style="padding-top: 25px;">
-                                <input type="text" id="gameTeam" style="padding:7px; border-width: 5px; border-color: black; font-size:20px;" size="40">
+                                <input type="text" id="gameTeam" style="padding:7px; border-width: 5px; border-color: black; font-size:20px;" size="40" >
                             </div>
                         </div>
                     </div>
@@ -320,17 +323,20 @@
         
         <!--Modals-->
         <div class="centered">
-            <button onclick="setModalAnswer()" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn" style="font-size:20px; margin:20px; background-color: #027373; font-family: 'Special Elite'; color: #FFFFFF">Send</button>
+            <button onclick="setModalAnswer()"  type="button" class="btn" style="font-size:20px; margin:20px; background-color: #027373; font-family: 'Special Elite'; color: #FFFFFF">Send</button>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!--Confirm answer modal-->
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Is this your answer?</h5>
+                  <h5 class="modal-title" id="confirmModalLabel"></h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modalAnswer">
-                  Your answer is: TODO
+                    <p id="modalAnswerText" style="font-size: 18px;">
+
+                    </p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -341,25 +347,84 @@
             </div>
           </div>
 
-
+          <!--Congratulations modal-->
           <div class="modal fade" id="endModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="endModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="endModalLabel">End?</h5>
+                  <h5 class="modal-title" id="endModalLabel">Congratulations</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  Congratulations .. leave a review TODO
+                    <p style="font-size: 18px" id="congratulationsText">
+                    </p>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="$('#reviewModal').modal('show');">Leave a review</button>
                   <button type="button" class="btn btn-success" data-bs-dismiss="modal">Finish</button>
                 </div>
               </div>
             </div>
           </div>
 
-          
+           <!--Review modal-->
+           <div class="modal fade" id="reviewModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="reviewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="reviewModalLabel">Your review</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <textarea class="form-control" id="reviewTextArea"></textarea>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="sendReview()">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Invalid fields modal-->
+        <div class="modal fade" id="errModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="errModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="errModalLabel">Empty values</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="font-size: 18px">
+                            Please write your answer and team name.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I understand</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bad answer modal-->
+        <div class="modal fade" id="badAnswerModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="badAnswerModallLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="badAnswerModallLabel">Incorrect answer length</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="font-size: 18px" id="badAnswerModalText">
+                            
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I understand</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--Thanks-->
         <div style='background-color: #F2B705; text-align: center; font-family: "Special Elite"; color:#100F0D; padding:30px; font-size: 25px;' >
@@ -401,8 +466,11 @@
             </div>
         </footer>
 
+        <script src="/Javascripts/games/config.js"></script>
+
         <script src="/Javascripts/API/functions.js"></script>
         <script src="/Javascripts/leaflet/map_data.js"></script>
+        <script src="/Javascripts/games/functions.js"></script>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="/Javascripts/for_all_pages/navbar.js"></script>

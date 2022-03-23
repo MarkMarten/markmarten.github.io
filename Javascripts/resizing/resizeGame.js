@@ -1,3 +1,7 @@
+let resized = false;
+let restored = false;
+
+
 function restore() {
     console.log("restore")
     gameField = document.getElementById("gameField")
@@ -362,26 +366,28 @@ function stackEl() {
     let width = window.innerWidth
     
     if (width < 1330) {
-        if (resized == false){
+        if (resized = false) {
             resizeGame()
             resizeGameBottom()
             resizeCarousel()
             resized = true
             restored = false
         }
+        
     } else {
-        if (restored == false) {
+        if (restored = false) {
+
             restore()
             restoreGameBottom()
             restoreCarousel()
             resized = false
             restored=true
         }
+        
     }
     
 }
-let resized = false;
-let restored = false;
+
 
 
 window.addEventListener('resize', stackEl);
