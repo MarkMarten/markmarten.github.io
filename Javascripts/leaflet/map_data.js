@@ -1,8 +1,10 @@
 
+
 function loadMap() {
+
     let map = L.map('map').setView([57.728958, 26.930269], 15);
 
-
+    
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: '',
@@ -14,72 +16,7 @@ function loadMap() {
         accessToken: 'pk.eyJ1IjoibWFydGVubSIsImEiOiJjbDBpZmcza3EwMDFvM2tveDY4dndxbm5yIn0.6dVpQZI8fxGHbVY0kkG_qg'
     }).addTo(map);
     
-    let compass = L.icon({
-        iconUrl: '/assets/icons/compass-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10] 
-    });
     
-    let eye = L.icon({
-        iconUrl: '/assets/icons/eye-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10] 
-    });
-    
-    let fish = L.icon({
-        iconUrl: '/assets/icons/fish-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10] 
-    });
-    
-    let landmark = L.icon({
-        iconUrl: '/assets/icons/landmark-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10] 
-    });
-    
-    let masks = L.icon({
-        iconUrl: '/assets/icons/masks-theater-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10] 
-    });
-    
-    let monument = L.icon({
-        iconUrl: '/assets/icons/monument-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10] 
-    });
-    
-    let mug = L.icon({
-        iconUrl: '/assets/icons/mug-hot-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [-3,-10] 
-    });
-    let music = L.icon({
-        iconUrl: '/assets/icons/music-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10]
-    });
-    let sourcetree = L.icon({
-        iconUrl: '/assets/icons/sourcetree-brands.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10] 
-    });
-    let tower = L.icon({
-        iconUrl: '/assets/icons/tower-observation-solid.svg',
-        iconSize:     [22, 22], 
-        iconAnchor:   [12, 12], 
-        popupAnchor:  [1,-10] 
-    });
     
     
     L.marker([57.732260, 26.927591], {icon: masks}).addTo(map)
@@ -100,7 +37,7 @@ function loadMap() {
     
     
     
-    L.easyButton('<img style="padding-bottom: 5px" src="/assets/icons/location-crosshairs-solid.svg">', function(btn, map){
+    L.easyButton('<img src="/assets/icons/arrows-to-dot-solid.svg">', function(btn, map){
         map.flyTo(new L.LatLng(57.728958, 26.930269));
     }).addTo( map );
     

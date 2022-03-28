@@ -1,11 +1,11 @@
 function setModalAnswer() {
     let answer = document.getElementById("gameAnswer").value
     let team_name = document.getElementById("gameTeam").value 
-
+    let current_gameAnswerLength = localStorage.getItem('gameAnswerLength')
     if (answer.length == 0 || team_name.length == 0) {
         $('#errModal').modal('show');
-    } else if (answer.length != config_answer1.length) {
-        document.getElementById("badAnswerModalText").innerHTML="There are <b>"+config_answer1.length+"</b> letters in this answer but your answer had <b>"+ answer.length+"</b>. Please change your answer to the correct size."
+    } else if (answer.length != current_gameAnswerLength) {
+        document.getElementById("badAnswerModalText").innerHTML="There are <b>"+current_gameAnswerLength+"</b> letters in this answer but your answer had <b>"+ answer.length+"</b>. Please change your answer to the correct size."
         $('#badAnswerModal').modal('show');
     } else {
         $('#confirmModal').modal('show');
@@ -13,11 +13,24 @@ function setModalAnswer() {
         document.getElementById("confirmModalLabel").innerHTML = "Team " + team_name
         
         // set end modal data
-        answerCalculation(answer, config_answer1)
+        queryComparison(answer)
     }
     
 }
 
+function queryComparison(answer) {
+    let gameId = localStorage.getItem('currentGameId')
+    axios.post('https://d3n1vu5aqz455s.cloudfront.net/comparison', {
+        game_id: gameId,
+      })
+      .then(function (response) {
+        console.log(response);
+        answerCalculation(answer, response.data[0].realanswer.toUpperCase())
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+}
 
 function answerCalculation(answer, realAnswer) {
 
