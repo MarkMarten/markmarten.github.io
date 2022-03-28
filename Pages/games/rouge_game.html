@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
     <head>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-        <title>Rõuge</title>
-        <link rel="icon" href="/assets/colored-compass.png">
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+      <title>Rõuge</title>
+      <link rel="icon" href="/assets/colored-compass.png">
         <!--Mobile view size-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Bootstrap-->
@@ -16,12 +17,12 @@
         <link rel="stylesheet" href="/Styles/main_style.css">
         <link rel="stylesheet" href="/Styles/map_style.css">
         <!--Font Special Elite-->
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Special+Elite" />
+       <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Special+Elite" />
 
-        <!--Leaflet-->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin=""/>
+       <!--Leaflet-->
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+       crossorigin=""/>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
@@ -34,13 +35,8 @@
         <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
         <!--Axios-->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-        <!--Star rating-->
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
         
     </head>
 
@@ -62,6 +58,7 @@
                     </div>
                 </nav>
             </div>
+
         </div>
 
 
@@ -83,9 +80,10 @@
 
         
         <div id="gameField" >
-            <div class="centered " style="background-color: #258286;" id="computerViewDiv">
+            <div class="centered " style="background-color: #258286;" >
+            
                 <!--Text-->
-                <div style="width:40%; margin:20px" id="gameTextDiv">
+                <div style="width:40%; margin:20px"  class="centered ">
                     <div style="padding:5%">
                         <div>
                             <div style="text-align: left; padding-top:6px;">
@@ -100,23 +98,45 @@
                                     Through their stories and places connected with them, you will reach clues that will lead you to find the treasure." The journalist, of course, decided to solve the mystery and discovered the secret!
                                     He also found that its value is so precious and important that others must also find it!<br>
                                     Therefore, instead of an article, he prepared stories of people and a map for you.
-                                    Here is the card game with the map and stories of people connected with Rõuge.<br>
-                                    Estimated time for a game is <b>75</b> minutes, but adjust it to your possibilities. 
                                 </p>
                             </div>
                         </div>
                         <div>
-                            <div id = "howToPlay"></div>
-                            <div id = "howToPlayMobile"></div>
+                            <div id = "howToPlay">
+                                <div  style="text-align: right; padding-top:6px">
+                                    <h3 style='font-family:"Special Elite"; color: #100F0D'>HOW TO PLAY?</h3>
+                                </div>
+                                <div >
+                                    <p style='font-family:"gidoleregular"; color: #FFFFFF'>
+                                        Here is the card game with the map and stories of people connected with Rõuge.<br>
+                                        Your goal is to discover the treasure!<br>
+                                        To do it:<br>
+                                        1. Start in the place with the star. Then go to the places marked on the map (you can choose the order) and match a story connected to this place.<br>
+                                        2. Put the number of the story next to the symbol of the place, in the frame under the map.<br>
+                                        3. In the place where you'll be, solve the task, that's contained in the person's story. IMPORTANT! To do it, you'll need to look around and read info, that you'll find in the places.<br>
+                                        4. Write the solutions of the tasks in the frame under the map, under the symbol and number. You can discover the treasure by arranging the solutions of the tasks in the order of numbers.<br><br>
+                                    </p>
+                                    <p style='font-family:"gidoleregular"; color: #F2B705'>
+                                        READ EVERYTHING CAREFULLY!
+                                    </p>
+                                    <p style='font-family:"gidoleregular"; color: #FFFFFF'>
+                                        Estimated time for a game is 75 minutes, but adjust it to your possibilities. Blue symbols on the map show where you can stop for a coffee or to take a look on the view.
+                                        After the game, I encourage you to look for more information about places and people from Rõuge, cause this place has a lot of interesting stories. What is mentioned in a game, is just the beginning!
+                                    </p>
+                                    <p style='font-family:"gidoleregular"; color: #F2B705'>
+                                        Good luck and enjoy your game!
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div> 
                 </div>
                 <!--Map + iconfields -->
-                <div style="width:50%;" id="gameMapDiv">
-                    <div class="centered">
+                <div  style="width:50%;" >
+                    <div class="centered" style="padding: 25px ">
                         <div id="map"></div>
                     </div>
-                    <div class="centered" style="padding: 20px"> 
+                    <div class="centered">
                         <div > 
                             <div class="centered" style="padding:1px">
                                 <img src="../../assets/icons/landmark-solid.svg" width="20" height="20">
@@ -207,13 +227,11 @@
                         </div> 
                     </div>
                 </div>
-            </div>
-            <div class="centered " style="background-color: #258286;" id="mobileViewDiv1">
-
-            </div>
-            <div class="centered " style="background-color: #258286;" id="mobileViewDiv2">
+    
             </div>
         </div>
+        
+       
         
 
         <!--Carousel-->
@@ -266,8 +284,12 @@
               </div>
         </div>
         
+        
+        
         <div class="centered " id="gameBottom">
+            
             <div  style="display:flex;justify-content:flex-end;align-items:center;">
+                
                 <div >
                     <div class="centered">
                         <div style="text-align: right;" >
@@ -294,6 +316,9 @@
                     </div>
                 </div>
             </div>
+           
+
+    
         </div>
         
         <!--Modals-->
@@ -352,11 +377,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group">
-                        <textarea class="form-control" id="reviewTextArea" maxlength="150"></textarea>
-                        <div class="centered">
-                            <div id="starRating"></div>
-                        </div>
-                    </div>
+                        <textarea class="form-control" id="reviewTextArea"></textarea>
+                      </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="sendReview()">Send</button>
@@ -375,7 +397,7 @@
                     </div>
                     <div class="modal-body">
                         <p style="font-size: 18px">
-                            Please write your answer and team name.  
+                            Please write your answer and team name.
                         </p>
                     </div>
                     <div class="modal-footer">
@@ -444,28 +466,9 @@
             </div>
         </footer>
 
-        
         <script src="/Javascripts/games/config.js"></script>
 
         <script src="/Javascripts/API/functions.js"></script>
-
-        <script>
-            $(function () {
-                $("#starRating").rateYo({
-                    rating: 0,
-                    halfStar: true,
-                    onSet: function (rating, rateYoInstance) {
-                            setRating(rating)
-                        }
-                });
-            });
-        </script>
-        <script>
-            // Important! Must be always set correctly or else game cant be finished without wrong answer.
-            localStorage.setItem('gameAnswerLength', 8)
-            localStorage.setItem('currentGameId', 'rouge')
-        </script>
-        
         <script src="/Javascripts/leaflet/map_data.js"></script>
         <script src="/Javascripts/games/functions.js"></script>
         
@@ -473,4 +476,6 @@
         <script src="/Javascripts/for_all_pages/navbar.js"></script>
         <script src="/Javascripts/resizing/resizeGame.js"></script>
     </body> 
+
+
 </html>

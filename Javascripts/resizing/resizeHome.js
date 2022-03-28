@@ -224,17 +224,6 @@ author.innerHTML =
     '</div>'
 }
 
-function repositionReviews() {
-    document.getElementById("reviewFieldMobile").style.display = "block"
-    document.getElementById("reviewFieldComputer").style.display = "none"
-}
-
-
-function restoreReviews() {
-    document.getElementById("reviewFieldMobile").style.display = "none"
-    document.getElementById("reviewFieldComputer").style.display ="flex"
-}
-
 function stackEl() {
 
 let width = window.innerWidth
@@ -250,10 +239,8 @@ if (width < 1600 && width >= 1200) {
 
 if (width < 1200) {
     repositionAuthor()
-    repositionReviews()
 } else {
     restoreAuthor()
-    restoreReviews()
 }
 }
 
