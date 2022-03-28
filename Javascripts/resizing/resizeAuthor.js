@@ -4,7 +4,7 @@ function reposition() {
     whoami = document.getElementById('whoami')
     whoami.innerHTML = 
         '<div>' +
-                '<img src="/assets/ula2.jpg" class="rounded" style="width:250px; height:250px; object-fit: cover; "/>' +
+                '<img src="/assets/ula2.jpg" class="rounded" style="width:350px; height:350px; object-fit: cover; "/>' +
             '</div>' +
         '<div style="margin-top: 15px; margin-bottom: 20px;padding:10px " class="centered"> ' +
             '<div style="text-align: left; max-width:700px;"  id="authorText" >' +
@@ -31,7 +31,7 @@ function reposition() {
     '    </div>' +
     '</div>' +
     '    <div >' +
-    '        <img src="/assets/ula3.jpg" class="rounded" style="width:250px; height:250px; object-fit: cover;"/>' +
+    '        <img src="/assets/ula3.jpg" class="rounded" style="width:350px; height:350px; object-fit: cover;"/>' +
     '    </div>' 
 
 
@@ -42,7 +42,7 @@ function restore() {
     whoami.innerHTML = 
         '    <div style="margin-left: max(50px, min(200px, 500px)); margin-right: max(50px, min(200px, 500px)); margin-bottom: 20px " class="centered ">'+
         '        <div>'+
-        '            <img src="/assets/ula2.jpg" class="rounded" style="width:250px; height:250px; object-fit: cover; margin-right: 30px; "/>'+
+        '            <img src="/assets/ula2.jpg" class="rounded" style="width:350px; height:350px; object-fit: cover; margin-right: 30px; "/>'+
         '        </div>'+
         '        <div style="text-align: left; max-width:700px;"  id="authorText">'+
         "        <h3 style='font-family:\"Special Elite\"; color: #F2B705'>WHO AM I?</h3>"+
@@ -65,7 +65,7 @@ function restore() {
     '        </p>' +
     '    </div>' +
     '    <div>' +
-    '        <img src="/assets/ula3.jpg" class="rounded" style="width:250px; height:250px; object-fit: cover; margin-right: 30px;"/>' +
+    '        <img src="/assets/ula3.jpg" class="rounded" style="width:350px; height:350px; object-fit: cover; margin-right: 30px;"/>' +
     '    </div>' +
     '</div>' 
 }
