@@ -51,29 +51,6 @@ function repositionS() {
 }
 
 function repositionXS() {
-  /*work = document.getElementById("work_images");
-
-  work.innerHTML =
-    "<div >" +
-    '<div style="padding-right:20px; padding-left:20px" >' +
-    '    <img src="/assets/2.png" style="border-radius: 10px;" class="explanationCardImage "  alt="...">' +
-    '    <div class="centered">' +
-    '        <p class="card-text">1. Choose the game</p>' +
-    "    </div>" +
-    "</div>" +
-    '<div style="padding-right:20px; padding-left:20px">' +
-    '    <img src="/assets/4.png" style="border-radius: 10px;" class="explanationCardImage " alt="...">' +
-    '    <div class="centered">' +
-    '        <p class="card-text">2. Book and pay</p>' +
-    "    </div>" +
-    "</div>" +
-    '<div style="padding-right:20px; padding-left:20px">' +
-    '    <img src="/assets/5.png" style="border-radius: 10px;" class="explanationCardImage card-img-top" alt="...">' +
-    '    <div class="centered">' +
-    '        <p class="card-text">3. Get the access and play</p>' +
-    "    </div>" +
-    "</div>" +
-    "</div>";*/
 
   work = document.getElementById("work_images").classList;
   work.remove("bounded");
@@ -117,26 +94,6 @@ function repositionXS() {
 }
 
 function restore() {
-  /*work = document.getElementById("work_images");
-  work.innerHTML =
-    '<div style="padding-right:20px; padding-left:20px" >' +
-    '    <img src="/assets/2.png" style="border-radius: 10px;" class="explanationCardImage "  alt="...">' +
-    '    <div class="centered">' +
-    '        <p class="card-text">1. Choose the game</p>' +
-    "    </div>" +
-    "</div>" +
-    '<div style="padding-right:20px; padding-left:20px">' +
-    '    <img src="/assets/4.png" style="border-radius: 10px;" class="explanationCardImage " alt="...">' +
-    '    <div class="centered">' +
-    '        <p class="card-text">2. Book and pay</p>' +
-    "    </div>" +
-    "</div>" +
-    '<div style="padding-right:20px; padding-left:20px">' +
-    '    <img src="/assets/5.png" style="border-radius: 10px;" class="explanationCardImage card-img-top" alt="...">' +
-    '    <div class="centered">' +
-    '        <p class="card-text">3. Get the access and play</p>' +
-    "    </div>" +
-    "</div>";*/
 
     work = document.getElementById("work_images").classList;
     work.remove("boundedExtraSmall");
