@@ -4,32 +4,36 @@ function setRating(r) {
 }
 
 function sendAnswer() {
-    $('#endModal').modal('show');
-
     const answer = document.getElementById("gameAnswer").value
     const team_name = document.getElementById("gameTeam").value
+    
+    if (answer.length > 0 ) {
+      $('#endModal').modal('show');
 
-    axios.post('https://d3n1vu5aqz455s.cloudfront.net/answer', {
-      game: "rouge",
-      answer: answer,
-      team_name: team_name,
-      correctness: player_correct_amount
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      axios.post('https://d3n1vu5aqz455s.cloudfront.net/answer', {
+        game: "rouge",
+        answer: answer,
+        team_name: team_name,
+        correctness: player_correct_amount
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    } else {
+      alert("There was a problem with your answer.")
+    }
+
+    
       
 }
 
 
 
 function sendReview() {
-
   let reviewText = document.getElementById("reviewTextArea").value
-
 
   axios.post('https://d3n1vu5aqz455s.cloudfront.net/postreview', {
       review: reviewText,

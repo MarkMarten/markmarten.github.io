@@ -85,6 +85,7 @@
 
             window.onbeforeunload = () => {
                 localStorage.removeItem('base64_html');
+                return 'Are you sure you want to leave?';
             }
         </script>
 

@@ -137,3 +137,7 @@ body {
     margin-right: max(50px, min(50px, 500px));
 }
 
+
+.carousel-control-prev , .carousel-indicators, .carousel-control-next-icon {
+    filter: invert(100%);
+}
