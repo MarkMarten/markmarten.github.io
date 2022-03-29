@@ -4,6 +4,7 @@ function repositionS() {
     work.remove("boundedExtraSmall");
     work.add("boundedSmall")
 
+
   txt1 = document.getElementById("main_text1").classList;
   txt1.remove("bounded");
   txt1.remove("boundedExtraSmall");
@@ -56,6 +57,7 @@ function repositionXS() {
   work.remove("bounded");
   work.remove("boundedSmall");
 
+
   txt1 = document.getElementById("main_text1").classList;
   txt1.remove("bounded");
   txt1.remove("boundedSmall");
@@ -99,6 +101,7 @@ function restore() {
     work.remove("boundedExtraSmall");
     work.remove("boundedSmall");
     work.add("bounded")
+
 
   txt1 = document.getElementById("main_text1").classList;
   txt1.add("bounded");
