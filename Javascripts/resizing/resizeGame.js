@@ -2,8 +2,6 @@ let resized = false;
 let restored = false;
 
 function newResizeGame() {
-    console.log("resize")
-
     // clear mobile view HTML(just in case)
     document.getElementById("mobileViewDiv1").innerHTML = ""
     document.getElementById("mobileViewDiv2").innerHTML = ""
@@ -27,14 +25,13 @@ function newResizeGame() {
     document.getElementById("mobileViewDiv2").innerHTML = gameMapDiv
     loadMap()
 
-    
+    // resize title
+    document.getElementById("gameTitle").style.fontSize = "32px"
 
-    // remove initial HTML
     
 }
 
 function newRestore() {
-    console.log("resotre")
     document.getElementById("gameTextDiv").style.width = "40%"
 
     //remove how to play button
@@ -44,8 +41,6 @@ function newRestore() {
 
     document.getElementById("gameTextDiv").style.width = "40%"
     document.getElementById("gameMapDiv").style.width = "50%"
-
-
 
     if (document.getElementById("computerViewDiv").innerHTML.length == 0) {
         document.getElementById("computerViewDiv").innerHTML +=  document.getElementById("gameTextDiv").outerHTML
@@ -57,6 +52,8 @@ function newRestore() {
     if (map_initialized == false) {
         loadMap()
     }
+    // resize title
+    document.getElementById("gameTitle").style.fontSize = "50px"
 }
 
 

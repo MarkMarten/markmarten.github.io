@@ -17,7 +17,7 @@ function sendAnswer(game) {
         correctness: player_correct_amount
       })
       .then(function (response) {
-        console.log(response);
+
       })
       .catch(function (error) {
         console.log(error);
@@ -41,7 +41,7 @@ function sendReview() {
       game: "rouge"
     })
     .then(function (response) {
-      console.log(response);
+
     })
     .catch(function (error) {
       console.log(error);
@@ -66,7 +66,7 @@ function sendEmail() {
       message: message,
     })
     .then(function (response) {
-      console.log(response);
+
       $('#messageSucModal').modal('show');
     })
     .catch(function (error) {

@@ -3,7 +3,6 @@ function loadReviews() {
     document.getElementById("reviewFieldMobile").innerHTML = ""
     axios.get('https://d3n1vu5aqz455s.cloudfront.net/reviews')
       .then(function (response) {
-        console.log(response);
         let data = response.data
 
         for (let i=0; i<data.length; i++) {

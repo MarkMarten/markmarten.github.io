@@ -1,10 +1,12 @@
 
 map_initialized = false
-
+function recenter() {
+    map.setView(new L.LatLng(57.728958, 26.930269), 15);
+}
 
 function loadMap() {
 
-    let map = L.map('map').setView([57.728958, 26.930269], 15);
+    map = L.map('map').setView([57.728958, 26.930269], 15);
 
     
 
@@ -39,9 +41,16 @@ function loadMap() {
     
     
     
-    L.easyButton('<img src="/assets/icons/arrows-to-dot-solid.svg" style="padding-bottom: 4px">', function(btn, map){
-        map.flyTo(new L.LatLng(57.728958, 26.930269));
-    }).addTo( map );
+
+    let command = L.control({position: 'bottomleft'});
+    
+    command.onAdd = function (map) {
+        let div = L.DomUtil.create('div', 'mapCenterButton');
+        
+        div.innerHTML = '<button type="button" class="btn btn-light" onclick="recenter()" style="border: 1px solid black; font-size: 12px">Recenter</button>'; 
+        return div;
+    };
+    command.addTo(map);
     
     
     

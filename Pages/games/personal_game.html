@@ -63,12 +63,37 @@
                 </nav>
             </div>
         </div>
+        <div class="centered">
+            <p style="margin-top:200px">Please wait for the game to load.</p>
+        </div>
         <div class="centered" >
-            <p style="margin-top:200px">To play the personalized game please enter the code <a href="/Pages/games/code.html">here.</a></p>
+            <p style="margin-top:200px">If you have not entered your personalized game code then please enter the code <a href="/Pages/games/code.html">here.</a></p>
         </div>
 
         <script src="/Javascripts/games/config.js"></script>
         <script src="/Javascripts/games/personal_game_is_open.js"></script>
+        <script>
+            let code = localStorage.getItem('code')
+            axios.post('https://d3n1vu5aqz455s.cloudfront.net/personalgame', {
+                code: code
+            })
+                .then(function (response) {
+                    let data = response.data
+                    if (data.length > 0 ) {
+                        
+                        
+                        setInnerHTML(document.getElementById('personalGameBody'), readBase64ToHTML(data[0].base64_html))
+
+                        
+                    } else {
+                        document.getElementById("noGameFoundText").style.display = "block"
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        </script>
+
         
     </body>
 </html>

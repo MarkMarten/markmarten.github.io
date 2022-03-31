@@ -7,7 +7,6 @@ function latestCompletions() {
   
       axios.get('https://d3n1vu5aqz455s.cloudfront.net/latestcompletions')
       .then(function (response) {
-        console.log(response);
         let data = response.data
         for (let i=1; i<=data.length; i++) {
           let date = new Date(data[i-1].finishtimestamp)

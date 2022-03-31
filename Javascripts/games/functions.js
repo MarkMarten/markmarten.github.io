@@ -24,7 +24,6 @@ function queryComparison(answer) {
         game_id: gameId,
       })
       .then(function (response) {
-        console.log(response);
         answerCalculation(answer, response.data[0].realanswer.toUpperCase())
       })
       .catch(function (error) {

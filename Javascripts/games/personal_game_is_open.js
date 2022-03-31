@@ -27,4 +27,4 @@ function setInnerHTML(elm, html) {
   }
 
 
-setInnerHTML(document.getElementById('personalGameBody'), readBase64ToHTML(localStorage.getItem('base64_html')))
+
