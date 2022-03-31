@@ -54,6 +54,9 @@ function newRestore() {
 
     document.getElementById("mobileViewDiv1").innerHTML = ""
     document.getElementById("mobileViewDiv2").innerHTML = ""
+    if (map_initialized == false) {
+        loadMap()
+    }
 }
 
 
@@ -104,11 +107,11 @@ function restoreGameBottom() {
 }
 
 function resizeCarousel() {
-    carousel = document.getElementById("carouselExampleIndicators")
+    carousel = document.getElementById("carouselIndicators")
     carousel.style.width = "100%"
 }
 function restoreCarousel() {
-    carousel = document.getElementById("carouselExampleIndicators")
+    carousel = document.getElementById("carouselIndicators")
     carousel.style.width = "50%"
 }
 
@@ -126,13 +129,14 @@ function stackEl() {
             resizeCarousel()
             resized = true
             restored = false
+            map_initialized = false
         }
         
     } else {
         if (restored == false) {
-
+            
             newRestore()
-
+            
             restoreGameBottom()
             restoreCarousel()
             resized = false

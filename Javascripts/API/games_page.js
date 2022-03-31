@@ -4,7 +4,6 @@ function latestCompletions() {
     ];
 
     
-    
   
       axios.get('https://d3n1vu5aqz455s.cloudfront.net/latestcompletions')
       .then(function (response) {

@@ -28,5 +28,14 @@ function queryGame() {
         });
   }
 
+function queryClues() {
+    axios.get('https://d3n1vu5aqz455s.cloudfront.net/personalgameclues')
+        .then(function (response) {
+            console.log()
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
 
 

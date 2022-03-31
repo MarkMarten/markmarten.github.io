@@ -1,4 +1,6 @@
 
+map_initialized = false
+
 
 function loadMap() {
 
@@ -37,13 +39,12 @@ function loadMap() {
     
     
     
-    L.easyButton('<img src="/assets/icons/arrows-to-dot-solid.svg">', function(btn, map){
+    L.easyButton('<img src="/assets/icons/arrows-to-dot-solid.svg" style="padding-bottom: 4px">', function(btn, map){
         map.flyTo(new L.LatLng(57.728958, 26.930269));
     }).addTo( map );
     
     
     
-    
-    
+    map_initialized=true
 }
 loadMap()

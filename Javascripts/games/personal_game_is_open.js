@@ -15,5 +15,16 @@ function utf8_to_b64( str ) {
     return decodeURIComponent(escape(window.atob( str )));
   }
   
+function setInnerHTML(elm, html) {
+    elm.innerHTML = html;
+    Array.from(elm.querySelectorAll("script")).forEach( oldScript => {
+      const newScript = document.createElement("script");
+      Array.from(oldScript.attributes)
+        .forEach( attr => newScript.setAttribute(attr.name, attr.value) );
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  }
 
-document.getElementById('personalGameBody').innerHTML = readBase64ToHTML(localStorage.getItem('base64_html'))
+
+setInnerHTML(document.getElementById('personalGameBody'), readBase64ToHTML(localStorage.getItem('base64_html')))

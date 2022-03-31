@@ -67,35 +67,8 @@
             <p style="margin-top:200px">To play the personalized game please enter the code <a href="/Pages/games/code.html">here.</a></p>
         </div>
 
-        <script src="/Javascripts/games/personal_game_is_open.js"></script>
         <script src="/Javascripts/games/config.js"></script>
-
-        <script src="/Javascripts/API/functions.js"></script>
-
-        <script>
-            $(function () {
-                $("#starRating").rateYo({
-                    rating: 0,
-                    halfStar: true,
-                    onSet: function (rating, rateYoInstance) {
-                            setRating(rating)
-                        }
-                });
-            });
-
-            window.onbeforeunload = () => {
-                localStorage.removeItem('base64_html');
-                return 'Are you sure you want to leave?';
-            }
-        </script>
-
-
-        <script src="/Javascripts/leaflet/map_data.js"></script>
-        <script src="/Javascripts/games/functions.js"></script>
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="/Javascripts/for_all_pages/navbar.js"></script>
-        <script src="/Javascripts/resizing/resizeGame.js"></script>
+        <script src="/Javascripts/games/personal_game_is_open.js"></script>
         
     </body>
 </html>

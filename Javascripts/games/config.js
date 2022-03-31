@@ -49,6 +49,8 @@ how_to_play_text_HTML =      '            <div>' +
 '                </div>' +
 '            </div>' 
 
+
+
 compass = L.icon({
     iconUrl: '/assets/icons/compass-solid.svg',
     iconSize:     [22, 22], 
@@ -115,3 +117,4 @@ tower = L.icon({
     iconAnchor:   [12, 12], 
     popupAnchor:  [1,-10] 
 });
+

@@ -3,15 +3,15 @@ function setRating(r) {
     gameRating = r;
 }
 
-function sendAnswer() {
+function sendAnswer(game) {
     const answer = document.getElementById("gameAnswer").value
     const team_name = document.getElementById("gameTeam").value
-    
+
     if (answer.length > 0 ) {
       $('#endModal').modal('show');
 
       axios.post('https://d3n1vu5aqz455s.cloudfront.net/answer', {
-        game: "rouge",
+        game: game,
         answer: answer,
         team_name: team_name,
         correctness: player_correct_amount
