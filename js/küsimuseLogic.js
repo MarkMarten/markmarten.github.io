@@ -183,7 +183,11 @@ function keskmineTeema1() {
 function keskmineTeema2() {
     let summa = 0;
     for (let i = 7; i <= 10; i++) {
-        summa += küsimuste_vastused[i];
+        if (küsimuste_vastused[i] == 1) { summa += 5 };
+        if (küsimuste_vastused[i] == 2) { summa += 4 };
+        if (küsimuste_vastused[i] == 3) { summa += 3 };
+        if (küsimuste_vastused[i] == 4) { summa += 2 };
+        if (küsimuste_vastused[i] == 5) { summa += 1 };
     }
     return summa/4;
 }
@@ -191,7 +195,15 @@ function keskmineTeema2() {
 function keskmineTeema3() {
     let summa = 0;
     for (let i = 11; i <= 18; i++) {
-        summa += küsimuste_vastused[i];
+        if (i == 14) {
+            if (küsimuste_vastused[i] == 1) { summa += 5 };
+            if (küsimuste_vastused[i] == 2) { summa += 4 };
+            if (küsimuste_vastused[i] == 3) { summa += 3 };
+            if (küsimuste_vastused[i] == 4) { summa += 2 };
+            if (küsimuste_vastused[i] == 5) { summa += 1 };
+        } else {
+            summa += küsimuste_vastused[i];
+        }
     }
     return summa/8;
 }
