@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <title>Enesejuhitud õppimise oskused</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/book-stack.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body  class="bg-primary" style="height:100%;">
+        <div class="mt-4" style="padding-left: 10px">
+            <a class="btn btn-primary" href="/index.html">
+                Tagasi algusesse
+            </a>
+        </div>
+        
+        <div style=" height: 70%; display:flex;justify-content:center;align-items:center;">
+            <!--object-->
+            <div style="width: 30%; height:350px; min-width: 350px; " class="neuromorphism">
+                <!--counter-->
+                <div  class="text-white" style="padding-left:25px; padding-top:25px">
+                    <h6 id="küsimuseCounter"></h6>
+                </div>
+
+                <!--küsimus/rating-->
+                <div id="küsimus" class="text-white text-center" style="padding-left:25px; padding-right:25px; border-radius: 25px;">
+                    <h3 id="tekst" style="padding: 25px; height: 166px;"></h3>
+                    <div class="d-flex justify-content-center">
+                        <div style="max-width: 400px; width: 50%"  >
+                            <div class="d-flex justify-content-between" style="width:97%; margin-left:5px">
+                                <h6>1</h6>
+                                <h6>2</h6>
+                                <h6>3</h6>
+                                <h6>4</h6>
+                                <h6>5</h6>
+                            </div>
+
+                            <!--<input type="range" class="form-range" min="0" max="5" step="1">-->
+                            <div class="form-check d-flex justify-content-between">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio1" onclick="kontrolliKasKõikVastatud()">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio2" onclick="kontrolliKasKõikVastatud()">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio3" onclick="kontrolliKasKõikVastatud()">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio4" onclick="kontrolliKasKõikVastatud()">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio5" onclick="kontrolliKasKõikVastatud()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--nupud-->
+                <div class="d-flex justify-content-between" style="padding-left:25%; padding-right: 25%; margin-top:20px; ">
+                    <button type="button" id="eelmineBtn" class="btn btn-eelmine" onclick="eelmine()" >Eelmine</button>
+                    <button type="button" id="järgmineBtn" class="btn btn-järgmine" onclick="järgmine()">Järgmine</button>
+                </div>
+
+                <div class="text-white text-center" style="padding: 25px;">
+                    <p><em>
+                        1 - ei ole minu puhul tõene <br>
+                        5 - on minu puhul tõene</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center" >
+            <div style=" width: 150px" class="text-center" >
+                <button type="button" id="esitaBtn" class="btn btn-l btn-outline-light btn-esita" onclick="esita()" data-bs-toggle="modal" data-bs-target="#tulemusModal" disabled >Esita vastused</button>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="tulemusModal" tabindex="-1" aria-labelledby="tulemusModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="tulemusModalLabel">Tiitel</h5>
+                </div>
+                <div class="modal-body" id="tulemusTekst">
+                  Tulemus ....
+                </div>
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-primary" >
+                    <a class="text-white" href="/index.html">
+                        Tehtud!
+                    </a>
+                </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="js/küsimuseLogic.js"></script>
+    </body>
+</html>
