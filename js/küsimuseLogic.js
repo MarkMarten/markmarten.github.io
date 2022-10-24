@@ -85,8 +85,11 @@ function handleButtonStates(index) {
     }
 }
 
+
+
 function kontrolliKasKõikVastatud() {
     salvestaVastus(parseInt(document.getElementById("küsimuseCounter").innerHTML.split("/")[0]))
+    document.getElementById("järgmineBtn").disabled = false;
     for (let i = 1; i <= Object.keys(küsimuste_vastused).length; i++) {
         if (küsimuste_vastused[i] == null) {
             document.getElementById("esitaBtn").disabled = true;
@@ -94,8 +97,29 @@ function kontrolliKasKõikVastatud() {
         }
       }
     
-    document.getElementById("esitaBtn").disabled = false;
+    kuvaEsitaNuppuKuiVaja();
     return true;
+}
+
+function kuvaEsitaNuppuKuiVaja() {
+    if (millineRadioOnValitud() != null) {
+        if (getQIndex() == Object.keys(küsimuste_vastused).length) {
+            document.getElementById("esitaBtn").disabled = false;
+            document.getElementById("esitaBtn").hidden = false;
+            document.getElementById("järgmineBtn").disabled = true;
+            document.getElementById("järgmineBtn").hidden = true;
+        } else {
+            document.getElementById("esitaBtn").disabled = true;
+            document.getElementById("esitaBtn").hidden = true;
+            document.getElementById("järgmineBtn").disabled = false;
+            document.getElementById("järgmineBtn").hidden = false;
+        }
+    }
+}
+
+function getQIndex() {
+    let qIndex = parseInt(document.getElementById("küsimuseCounter").innerHTML.split("/")[0]);
+    return qIndex;
 }
 
 function setNewQuestion(index) {
@@ -112,6 +136,7 @@ function järgmine() {
     let nextIndex = qIndex+1;
     eemaldaRadioSelection() // eemaldab valiku
     pageRefresh(nextIndex); // uus küsimus + uus counter + checkib buttoneid + valib radio kui vastatud
+    kuvaEsitaNuppuKuiVaja();
 }
 
 function eelmine() {
@@ -119,6 +144,7 @@ function eelmine() {
     let nextIndex = qIndex - 1;
     eemaldaRadioSelection()
     pageRefresh(nextIndex);
+    kuvaEsitaNuppuKuiVaja();
 }
 
 function salvestaVastus(index) {
@@ -243,6 +269,10 @@ function pageRefresh(index) {
     setCounter(index);
     handleButtonStates(index);
     valiRadioKuiVastatud(index);
+    
+    if (millineRadioOnValitud() == null) {
+        document.getElementById("järgmineBtn").disabled = true;
+    }
 }
 
 //init with index 1

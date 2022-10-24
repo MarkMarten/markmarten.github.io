@@ -21,24 +21,24 @@
     <body  class="bg-primary" style="height:100%;">
         <div class="mt-4" style="padding-left: 10px">
             <a class="btn btn-primary" href="/index.html">
-                Tagasi algusesse
+                Tagasi avalehele
             </a>
         </div>
         
         <div style=" height: 70%; display:flex;justify-content:center;align-items:center;">
             <!--object-->
-            <div style="width: 30%; height:350px; min-width: 350px; " class="neuromorphism">
+            <div style="width: 30%; height:350px; min-width: 300px; " class="neuromorphism">
                 <!--counter-->
                 <div  class="text-white" style="padding-left:25px; padding-top:25px">
                     <h6 id="küsimuseCounter"></h6>
                 </div>
 
                 <!--küsimus/rating-->
-                <div id="küsimus" class="text-white text-center" style="padding-left:25px; padding-right:25px; border-radius: 25px;">
+                <div id="küsimus" class="text-white text-center" style="padding-left:5px; padding-right:5px; border-radius: 25px;">
                     <h3 id="tekst" style="padding: 25px; height: 166px;"></h3>
                     <div class="d-flex justify-content-center">
-                        <div style="max-width: 400px; width: 50%"  >
-                            <div class="d-flex justify-content-between" style="width:97%; margin-left:5px">
+                        <div style="max-width: 250px; width: 50%"  >
+                            <div class="d-flex justify-content-between" style="width:97%; margin-left:5px;">
                                 <h6>1</h6>
                                 <h6>2</h6>
                                 <h6>3</h6>
@@ -59,9 +59,10 @@
                 </div>
                 
                 <!--nupud-->
-                <div class="d-flex justify-content-between" style="padding-left:25%; padding-right: 25%; margin-top:20px; ">
+                <div class="d-flex justify-content-center" style="padding-left:25%; padding-right: 25%; margin-top:20px; ">
                     <button type="button" id="eelmineBtn" class="btn btn-eelmine" onclick="eelmine()" >Eelmine</button>
                     <button type="button" id="järgmineBtn" class="btn btn-järgmine" onclick="järgmine()">Järgmine</button>
+                    <button type="button" id="esitaBtn" class="btn btn-l btn-outline-light btn-esita" onclick="esita()" data-bs-toggle="modal" data-bs-target="#tulemusModal" disabled hidden>Esita vastused</button>
                 </div>
 
                 <div class="text-white text-center" style="padding: 25px;">
@@ -75,7 +76,7 @@
 
         <div class="d-flex justify-content-center" >
             <div style=" width: 150px" class="text-center" >
-                <button type="button" id="esitaBtn" class="btn btn-l btn-outline-light btn-esita" onclick="esita()" data-bs-toggle="modal" data-bs-target="#tulemusModal" disabled >Esita vastused</button>
+                
             </div>
         </div>
         
