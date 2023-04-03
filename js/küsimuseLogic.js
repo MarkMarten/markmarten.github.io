@@ -338,15 +338,15 @@ function esita() {
     let avatusUuteleVäljakutsetele = teemaKeskmineTulemus(1);
     let raskustegaToimetulek = teemaKeskmineTulemus(2);
     let õppimiseHoiak = teemaKeskmineTulemus(3);
-    let lahendusteleOrienteeritus = teemaKeskmineTulemus(4);
+    let tulevikuleOrienteeritus = teemaKeskmineTulemus(4);
     let metakognitsioon = teemaKeskmineTulemus(5);
     let vastutus = teemaKeskmineTulemus(6);
     let keskmine = Math.round((avatusUuteleVäljakutsetele + raskustegaToimetulek + õppimiseHoiak +
-        lahendusteleOrienteeritus + metakognitsioon + vastutus)/6) ;
+        tulevikuleOrienteeritus + metakognitsioon + vastutus)/6) ;
     document.getElementById("tulemusTekst").innerHTML = "Avatus uutele väljakutsetele: <b>"+avatusUuteleVäljakutsetele+"/100</b><br>" +
                                                         "Raskustega toimetulek: <b>"+raskustegaToimetulek+"/100</b><br>" +
                                                         "Õppimise väärtustamine/hoiak: <b>"+õppimiseHoiak+"/100</b><br>" +
-                                                        "Lahendustele orienteeritus: <b>"+lahendusteleOrienteeritus+"/100</b><br>" +
+                                                        "Tulevikule orienteeritus: <b>"+tulevikuleOrienteeritus+"/100</b><br>" +
                                                         "Metakognitsioon: <b>"+metakognitsioon+"/100</b><br>" +
                                                         "Vastutus: <b>"+vastutus+"/100</b><br>" +
                                                         "<b><mark>Kokku: "+keskmine+"/100</mark></b>";
