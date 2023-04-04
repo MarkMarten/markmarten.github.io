@@ -297,7 +297,6 @@ function salvestaVastus(index) {
         protsent = 100;
     }
     küsimused[index].vastus = protsent;
-    console.log(küsimused)
 }
 
 function eemaldaRadioSelection() {
