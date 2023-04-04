@@ -297,6 +297,7 @@ function salvestaVastus(index) {
         protsent = 100;
     }
     küsimused[index].vastus = protsent;
+    console.log(küsimused)
 }
 
 function eemaldaRadioSelection() {
@@ -379,7 +380,7 @@ function arvutaNegatiivneVastus(vastus) {
     let summa = 0;
     if (vastus == 0) { summa += 100 };
     if (vastus == 25) { summa += 75 };
-    if (vastus == 70) { summa += 50 };
+    if (vastus == 50) { summa += 50 };
     if (vastus == 75) { summa += 25 };
     if (vastus == 100) { summa += 0 };
     return summa;
